@@ -1,0 +1,4 @@
+{
+  "connectionString": "mongodb://localhost/node-mongo-registration-login-api",
+  "secret": "Feynman, Einstein and Schrodinger walk into a bar. Feynman says, “It appears we’re inside a joke.” Einstein replies, “But only to an observer who saw us walk in simultaneously.” To which Schrödinger says, “If someone’s looking in the window, I’m leaving."
+}

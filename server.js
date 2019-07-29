@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const jwt = require('./src/app/userReg/_helpers/jwt');
-const errorHandler = require('./src/app/userReg/_helpers/error-handler');
+const jwt = require('./src/app/_helpers/jwt');
+const errorHandler = require('./src/app/_helpers/error-handler');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -14,7 +14,9 @@ app.use(cors());
 app.use(jwt());
 
 // api routes
-app.use('/users', require('./src/app/userReg/users/user.controller'));
+app.use('/users', require('./src/app/users/user.controller'));
+app.use('/listings', require('./src/app/listings/listing.controller'));
+app.use('/bookings', require('./src/app/bookings/booking.controller'));
 
 // global error handler
 app.use(errorHandler);

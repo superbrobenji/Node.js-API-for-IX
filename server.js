@@ -15,8 +15,8 @@ app.use(jwt());
 
 // api routes
 app.use('/users', require('./src/app/users/user.controller'));
-app.use('/listings', require('./src/app/listings/listing.controller'));
-app.use('/bookings', require('./src/app/bookings/booking.controller'));
+app.use('/api/properties', require('./src/app/listings/listing.routes'));
+app.use('/api/bookings', require('./src/app/bookings/booking.routes'));
 
 // global error handler
 app.use(errorHandler);

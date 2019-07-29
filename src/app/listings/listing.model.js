@@ -1,17 +1,23 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-const schema = new Schema({
-    username: { type: String, required: true },
-    name: {type: String, required: true},
-    location: {type: String, required: true},
-    price: {type: String, required: true},
-    booked: {type: Boolean, required: true},
-    bookId: {type: String, required: false},
-    imageUrl: {type: String, required: false},
-    date: {type: String, required: true}
+const PropertyModel = mongoose.Schema({
+    property_name: {
+        type: String,
+        required: true
+    },
+    property_location: {
+        type: String,
+        required: true
+    },
+    property_price: {
+        type: Number,
+        required: true
+    },
+    property_image_url: {
+        type: String,
+        required: true
+    },
+    user_id: String
 });
 
-schema.set("toJSON", { virtuals: true });
-
-module.exports = mongoose.model("Listing", schema);
+module.exports = mongoose.model('Properties', PropertyModel);

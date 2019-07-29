@@ -1,13 +1,17 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-const schema = new Schema({
-    username: { type: String, required: true },
-    listingId: {type: String, required: true },
-    dateFrom: {type: String, required: true},
-    dateTo: {type: String, required: true}
+const BookingModel = mongoose.Schema({
+    date_from: {
+        type: String,
+        required: true 
+    },
+    date_to: {
+        type: String,
+        required: true 
+    },
+    user_id: String,
+    property_id: String,
+    booking_status: String
 });
 
-schema.set("toJSON", { virtuals: true });
-
-module.exports = mongoose.model("Booking", schema);
+module.exports = mongoose.model('Booking', BookingModel);
